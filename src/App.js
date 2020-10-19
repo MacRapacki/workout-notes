@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import style from './App.module.scss';
+
+import TrainingCard from './components/TrainingCard'
 
 function App() {
+
+  const [activeTrainingForm, setActiveTrainingForm] = useState(false);
+
+  const handleShowForm = () => {
+    setActiveTrainingForm(!activeTrainingForm)
+   
+  }
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={ activeTrainingForm ? ` ${style.App} ${style.active}` : style.App }>
+      <button
+      className={style.button} type="button" onClick={handleShowForm}>ADD TRAINING</button>
+    {activeTrainingForm ? <TrainingCard handleShowForm={handleShowForm} /> : null}
+
     </div>
   );
 }
 
 export default App;
+
