@@ -11,20 +11,36 @@ const TrainingCard = (props) => {
     const handleAddTraining = () => {
         setIsOpenAddTraining(!isOpenAddTraining)
     }
+    const handleEdit = (props) => {
+        console.log(props.index)
+    }
 
     return (
         <>
             <div className={style.overlay}>
                 <div className={style.wrapper}>
+
                     <button type="button" onClick={handleAddTraining}>Add workout</button>
                     <button type="button" onClick={props.handleShowForm}>X</button>
-                    {isOpenAddTraining ? <NewWorkoutForm setWorkoutsArr={setWorkoutsArr} workoutsArr={workoutsArr} /> : null}
+
+                    {isOpenAddTraining ?
+
+                        <NewWorkoutForm
+                            setWorkoutsArr={setWorkoutsArr}
+                            workoutsArr={workoutsArr}
+                            isOpenAddTraining={isOpenAddTraining}
+                            setIsOpenAddTraining={setIsOpenAddTraining}
+                        />
+                        : null}
+
                     {workoutsArr.map((workout, index) => {
                         return (
                             <div key={index}>
                                 <p>{workout.name}</p>
                                 <p>{workout.series}</p>
                                 <p>{workout.weight}</p>
+                                {index}
+                                <button type="button" index={index} onClick={handleEdit}> edit</button>
                             </div>
                         )
                     })}
