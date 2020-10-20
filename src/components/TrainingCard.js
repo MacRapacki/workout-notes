@@ -11,8 +11,8 @@ const TrainingCard = (props) => {
     const handleAddTraining = () => {
         setIsOpenAddTraining(!isOpenAddTraining)
     }
-    const handleEdit = (props) => {
-        console.log(props.index)
+    const handleEdit = (index) => {
+        console.log(index)
     }
 
     return (
@@ -40,7 +40,11 @@ const TrainingCard = (props) => {
                                 <p>{workout.series}</p>
                                 <p>{workout.weight}</p>
                                 {index}
-                                <button type="button" index={index} onClick={handleEdit}> edit</button>
+                                <button
+                                    type="button"
+                                    onClick={() => handleEdit(index)}
+
+                                > edit </button>
                             </div>
                         )
                     })}
