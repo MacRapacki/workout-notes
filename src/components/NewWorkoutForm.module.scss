@@ -1,3 +1,5 @@
+@import '../variables.scss';
+
 .overlay {
     position: absolute;
     width: 100%;
@@ -6,8 +8,8 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    background-color: #1b1b1bdc;
-    animation: appear 0.4s linear;
+    @include background-gradient;
+    animation: appear 0.3s linear;
     display: flex;
     justify-content: flex-start;
     align-items: center;

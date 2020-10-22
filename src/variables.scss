@@ -1,3 +1,23 @@
-@mixin aaa {
-    background-color: red;
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+@mixin background-gradient {
+    background: rgb(6, 7, 11);
+    background: linear-gradient(114deg, rgba(6, 7, 11, 1) 18%, rgba(45, 60, 72, 1) 79%);
+
+}
+
+@mixin primary-button {
+    width: 160px;
+    height: 40px;
+    font-size: 18px;
+    background-color: $primary-color;
+    border: none;
+    color: white;
+    border-radius: 15px;
+}
+
+$primary-color: #F64B20

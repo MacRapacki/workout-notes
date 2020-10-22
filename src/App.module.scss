@@ -1,20 +1,39 @@
+@import './variables.scss';
+
 .App {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
 
-  // &.active {
-  //   background-color: gray;
-  //   animation: appear 0.4s linear;
-  // }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    background-image: url("./images/javier-santos-guzman-9MR78HGoflw-unsplash.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: brightness(30%);
+    z-index: -1;
+  }
 
   .button {
     margin: 20px auto;
-    width: 150px;
+    width: 160px;
     height: 40px;
+    font-size: 18px;
+    background-color: $primary-color;
+    border: none;
+    color: white;
+    border-radius: 15px;
   }
 }
 

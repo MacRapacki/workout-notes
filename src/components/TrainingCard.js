@@ -5,15 +5,17 @@ import NewWorkoutForm from './NewWorkoutForm'
 
 const TrainingCard = (props) => {
 
-    const [isOpenAddTraining, setIsOpenAddTraining] = useState(false)
+    const [isAddTraining, setIsOpenAddTraining] = useState(false)
     const [workoutsArr, setWorkoutsArr] = useState([])
 
+
     const handleAddTraining = () => {
-        setIsOpenAddTraining(!isOpenAddTraining)
+        setIsOpenAddTraining(!isAddTraining)
     }
     const handleEdit = (index) => {
         console.log(index)
     }
+
 
     return (
         <>
@@ -23,12 +25,12 @@ const TrainingCard = (props) => {
                     <button type="button" onClick={handleAddTraining}>Add workout</button>
                     <button type="button" onClick={props.handleShowForm}>X</button>
 
-                    {isOpenAddTraining ?
+                    {isAddTraining ?
 
                         <NewWorkoutForm
                             setWorkoutsArr={setWorkoutsArr}
                             workoutsArr={workoutsArr}
-                            isOpenAddTraining={isOpenAddTraining}
+                            isAddTraining={isAddTraining}
                             setIsOpenAddTraining={setIsOpenAddTraining}
                         />
                         : null}

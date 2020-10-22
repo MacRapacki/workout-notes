@@ -17,7 +17,7 @@ function App() {
   return (
     <div className={ activeTrainingForm ? ` ${style.App} ${style.active}` : style.App }>
       <button
-      className={style.button} type="button" onClick={handleShowForm}>ADD TRAINING</button>
+      className={style.button} type="button" onClick={handleShowForm}>Add training</button>
     {activeTrainingForm ? <TrainingCard handleShowForm={handleShowForm} /> : null}
 
     </div>

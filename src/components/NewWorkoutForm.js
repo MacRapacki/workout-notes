@@ -8,6 +8,7 @@ const NewWorkoutForm = (props) => {
   const [workoutSeries, setWorkoutSeries] = useState(5)
   const [workoutWeight, setWorkoutWeight] = useState(20)
 
+
   const handleWorkoutName = (event) => { setWorkoutName(event.target.value) }
   const handleWorkoutSeries = (event) => { setWorkoutSeries(parseInt(event.target.value)) }
   const handleWorkoutWeight = (event) => { setWorkoutWeight(parseInt(event.target.value)) }
@@ -24,6 +25,7 @@ const NewWorkoutForm = (props) => {
     props.setIsOpenAddTraining(false)
     console.log(props.workoutsArr)
   }
+
 
   return (
     <>
